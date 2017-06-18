@@ -21,6 +21,6 @@ To read the tidy dataset use the following code in R (where "path" is the path i
 
 path= #define path here
 
-data <- read.table(file = paste0(path, "\\tidy_means_dset.txt"), header = TRUE)
+data <- read.table(file = paste0(path, "\\\\tidy_means_dset.txt"), header = TRUE)
 
 ##########################################################################
