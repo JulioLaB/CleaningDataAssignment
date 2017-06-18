@@ -53,8 +53,9 @@ for(set in sets){
 #read and store feature names from file
 feature_names <- read.table("..\\UCI HAR Dataset\\features.txt", na.strings=NA, stringsAsFactors=FALSE)
 
-#get the index of columns that in feature names have the word mean or std
-cols_with_means_and_sds <- grep("mean|std",  feature_names[,2])
+#get the index of columns that in feature names have the text "mean(" or "std(" 
+#the prenthesis is included to avoid fetching meanFreq() 
+cols_with_means_and_sds <- grep("mean\\(|std\\(",  feature_names[,2])
 
 #select the columns set, subject, activity and columns that have means and std
 #IMPORTANT, mean the +3, to account foo the first three columns (test,)
@@ -84,7 +85,7 @@ msdframe <- msdframe %>% mutate(activity = factor(activity, labels = activity_na
 #############################################################################
 
 #get the names of the measured variables that you are including (same as before but with value = TRUE)
-names_of_measured_vars <- cols_with_means_and_sds <- grep("mean|std",  feature_names[,2], value=TRUE)
+names_of_measured_vars <- cols_with_means_and_sds <- grep("mean\\(|std\\(",  feature_names[,2], value=TRUE)
 
 #clean the names a bit, I use "." as separator
 names_of_measured_vars <- gsub("\\(\\)-", "-", names_of_measured_vars)
@@ -120,6 +121,5 @@ means <- summarize_at(grouped_msdframe, .vars = names_of_measured_vars, .funs=(m
 
 #now save it
 write.table(means, file = "..\\tidy_means_dset.txt",  row.name=FALSE, col.names = TRUE)
-
 
 #END
