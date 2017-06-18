@@ -15,7 +15,7 @@ The analysis fullfills the following requirements (extracted from the assignment
 * Appropriately labels the data set with descriptive variable names.
 * From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-To read the data set use the following code in R (where "path" is the path in your computer where the file can be found)
+To read the tidy dataset use the following code in R (where "path" is the path in your computer where the file can be found)
 
 ##########################################################################
 
