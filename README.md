@@ -18,6 +18,7 @@ The analysis fullfills the following requirements (extracted from the assignment
 To read the data set use the following code in R (where "path" is the path in your computer where the file can be found)
 
 ##########################################################################
+
 path= #define path here
 data <- read.table(file = paste0(path, "\\tidy_means_dset.txt"), header = TRUE)
 ##########################################################################
