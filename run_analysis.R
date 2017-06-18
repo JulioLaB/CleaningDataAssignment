@@ -2,6 +2,10 @@
 ## You should create one R script called run_analysis.R that does the following.##
 ##################################################################################
 
+
+#NOTE If you are not using windows you may have to substitute "\\" with "/"
+
+
 ###########a###########################################################
 ## 1. Merges the training and the test sets to create one data set. ##
 ######################################################################
