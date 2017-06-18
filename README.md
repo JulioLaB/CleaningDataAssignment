@@ -23,6 +23,6 @@ path= #define path here
 
 data <- read.table(file = paste0(path, "\\\\tidy_means_dset.txt"), header = TRUE)
 
-#NOTE If you are not using windows you may have to substitute "\\" with "/" here and elswhere in the script
+#NOTE If you are not using windows you may have to substitute "\\\\" with "/" here and elswhere in the script
 
 ##########################################################################
